@@ -82,21 +82,41 @@ public:
 
 int main() {
     LinkedList list;
+    int choice, value;
     
-    // 测试链表操作
-    cout << "Appending 1, 2, 3:" << endl;
-    list.append(1);
-    list.append(2);
-    list.append(3);
-    list.printList();
-    
-    cout << "\nPrepending 0:" << endl;
-    list.prepend(0);
-    list.printList();
-    
-    cout << "\nDeleting 2:" << endl;
-    list.deleteNode(2);
-    list.printList();
-    
-    return 0;
+    while (true) {
+        cout << "\n链表操作菜4单：" << endl;
+        cout << "1. 在末尾插入节点" << endl;
+        cout << "2. 在头部插入节点" << endl;
+        cout << "3. 删除节点" << endl;
+        cout << "4. 打印链表" << endl;
+        cout << "5. 退出" << endl;
+        cout << "请输入你的选择: ";
+        cin >> choice;
+        
+        switch (choice) {
+            case 1:
+                cout << "请输入要插入的值: ";
+                cin >> value;
+                list.append(value);
+                break;
+            case 2:
+                cout << "请输入要插入的值: ";
+                cin >> value;
+                list.prepend(value);
+                break;
+            case 3:
+                cout << "请输入要删除的值: ";
+                cin >> value;
+                list.deleteNode(value);
+                break;
+            case 4:
+                list.printList();
+                break;
+            case 5:
+                return 0;
+            default:
+                cout << "无效的选择，请重试。" << endl;
+        }
+    }
 }
